@@ -1,5 +1,5 @@
-name, age, position, salary, birthday -- meta info
-Vlad, 21, trainee, 0, 20.02.2001
-Emi, 21, junior, 30000, 29.03.2001
-Andrew, 22, junior, 15000, 05.05.2000
-Julia, 20, trainee, 0, 11.10.2002
+name, age, position, salary, birthday, location -- meta info
+Vlad, 21, trainee, , 20.02.2001, Ukraine
+Emi, 21, junior, 30000, 29.03.2001, Ukraine
+Andrew, 22, junior, 15000, 05.05.2000, Ukraine
+Julia, 20, trainee, 0, 11.10.2002, Spain
