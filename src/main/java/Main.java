@@ -1,0 +1,95 @@
+import org.apache.commons.io.IOUtils;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.reflect.Field;
+import java.nio.charset.StandardCharsets;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+public class Main {
+    private static final String DELIMITER = ",";
+    private static final String COMMENT = "--";
+
+    public static void main(String[] args) throws IOException {
+        InputStream inputStream = Main.class.getResourceAsStream("sample.csv");
+        if(inputStream==null)
+            throw new IllegalArgumentException();
+        List<String> lines = IOUtils.readLines(inputStream, StandardCharsets.UTF_8);
+        Map<Integer, String> mapping = buildMetaInfo(lines.get(0));
+        List<Person> personList = transform(mapping, lines.subList(1, lines.size()));
+
+    }
+
+    private static List<Person> transform(Map<Integer, String> mapping, List<String> lines) {
+        return lines.stream().map(line -> toPerson(line, mapping)).collect(Collectors.toList());
+    }
+
+    private static Person toPerson(String line, Map<Integer, String> mapping) {
+        String[] array = splitter(line);
+        Person person = new Person();
+        for (int index = 0; index < array.length; index++) {
+            String value = array[index];
+            String fieldName = mapping.get(index);
+
+            setValueIntoField(value, fieldName, person);
+
+        }
+
+
+        return person;
+    }
+
+    private static void setValueIntoField(String value, String fieldName, Person person) {
+        try {
+            Field field = person.getClass().getDeclaredField(fieldName);
+            field.setAccessible(true);
+            field.set(person, transformValueToFieldType(field, value));
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
+
+    private static Object transformValueToFieldType(Field field, String value) {
+
+        Map<Class<?>, Function<String, Object>> typeToFunction = new LinkedHashMap<>();
+        typeToFunction.put(String.class, s -> s);
+        typeToFunction.put(int.class, Integer::parseInt);
+        typeToFunction.put(Float.class, Float::parseFloat);
+        typeToFunction.put(LocalDate.class, s -> LocalDate.parse(s, DateTimeFormatter.ofPattern("dd.MM.yyyy")));
+        typeToFunction.put(Character.class, s -> s.charAt(0));
+        typeToFunction.put(Long.class, Long::parseLong);
+        return typeToFunction.getOrDefault(field.getType(), type -> {
+            throw new UnsupportedOperationException("Type  is not supported" + type);
+        }).apply(value);
+    }
+
+    private static Map<Integer, String> buildMetaInfo(String line) {
+        Map<Integer, String> map = new LinkedHashMap<>();
+        String[] array = splitter(line);
+        for (int index = 0; index < array.length; index++) {
+
+            if (array[index].contains(COMMENT)) {
+                array[index] = array[index].split(COMMENT)[0].trim();
+            }
+            map.put(index, array[index]);
+        }
+        return map;
+    }
+
+    private static String[] splitter(String line) {
+        return Arrays.stream(line.split(DELIMITER))
+                .map(String::trim)
+                .toArray(String[]::new);
+    }
+
+
+}
