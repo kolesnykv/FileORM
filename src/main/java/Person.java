@@ -1,5 +1,4 @@
 import lombok.*;
-
 import java.time.LocalDate;
 
 @NoArgsConstructor
@@ -11,5 +10,6 @@ public class Person {
     private String position;
     private String salary;
     private LocalDate birthday;
+    private String location;
 
 }
