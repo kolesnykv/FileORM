@@ -1,10 +1,6 @@
 import lombok.SneakyThrows;
-import org.apache.commons.io.IOUtils;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.lang.reflect.Field;
-import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
@@ -19,16 +15,7 @@ public class Orm {
     private static final String DELIMITER = ",";
     private static final String COMMENT = "--";
 
-    public static List<String> readFile(String file) {
-        InputStream inputStream = Main.class.getResourceAsStream(file);
-        if(inputStream==null)
-            throw new IllegalArgumentException();
-        try {
-            return IOUtils.readLines(inputStream, StandardCharsets.UTF_8);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
+
     public static <T> List<T> transform(List<String> lines, Class<T> cls) {
         Map<Integer, String> mapping = buildMetaInfo(lines.get(0));
         return lines.subList(1, lines.size())
@@ -44,12 +31,8 @@ public class Orm {
         for (int index = 0; index < array.length; index++) {
             String value = array[index];
             String fieldName = mapping.get(index);
-
             setValueIntoField(value, fieldName, type);
-
         }
-
-
         return type;
     }
 
@@ -63,12 +46,9 @@ public class Orm {
         } catch (IllegalAccessException e) {
             throw new RuntimeException();
         }
-
-
     }
 
     private static Object transformValueToFieldType(Field field, String value) {
-
         Map<Class<?>, Function<String, Object>> typeToFunction = new LinkedHashMap<>();
         typeToFunction.put(String.class, s -> s);
         typeToFunction.put(int.class, Integer::parseInt);
@@ -85,7 +65,6 @@ public class Orm {
         Map<Integer, String> map = new LinkedHashMap<>();
         String[] array = splitter(line);
         for (int index = 0; index < array.length; index++) {
-
             if (array[index].contains(COMMENT)) {
                 array[index] = array[index].split(COMMENT)[0].trim();
             }
