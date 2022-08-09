@@ -11,7 +11,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 
-public class Orm {
+public class csvParse {
     private static final String DELIMITER = ",";
     private static final String COMMENT = "--";
 
@@ -35,6 +35,7 @@ public class Orm {
         }
         return type;
     }
+
 
     private static void setValueIntoField(String value, String fieldName, Object type) {
         try {
