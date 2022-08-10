@@ -19,12 +19,14 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        String fileName = "sample.csv";
-        List<Person> personList = csvParse.transform(readFile(fileName), Person.class);
         String pathFile = "src/main/resources/sample.xml";
-        List<Person> personList1 = xmlParse.transform(readXml(pathFile), Person.class);
-        String pathFile2 = "src/main/resources/sample.json";
-        List<Person> personList2 = jsonParse.transform(jsonToMap(pathFile2), Person.class);
+        List<Person> personList = null;
+        fileType filetype = fileType.valueOf(pathFile.split("\\.")[pathFile.split("\\.").length-1].toUpperCase());
+        switch (filetype){
+            case CSV -> personList = csvParse.transform(readFile(pathFile),Person.class);
+            case XML -> personList = xmlParse.transform(readXml(pathFile),Person.class);
+            case JSON -> personList = jsonParse.transform(jsonToMap(pathFile),Person.class);
+        }
     }
 
     public static List<String> readFile(String file) {
