@@ -1,0 +1,34 @@
+[
+    {
+      "name": "Vlad",
+      "age": 21,
+      "position": "trainee",
+      "birthday": "20.02.2001",
+      "salary": 0,
+      "location": "Ukraine"
+    },
+    {
+      "name": "Emi",
+      "age": 21,
+      "position": "junior",
+      "birthday": "29.03.2001",
+      "salary": 30000,
+      "location": "Ukraine"
+    },
+    {
+      "name": "Andrew",
+      "age": 22,
+      "position": "junior",
+      "birthday": "05.05.2000",
+      "salary": 15000,
+      "location": "Ukraine"
+    },
+    {
+      "name": "Julia",
+      "age": 19,
+      "position": "trainee",
+      "birthday": "11.10.2002",
+      "salary": 0,
+      "location": "Spain"
+    }
+]

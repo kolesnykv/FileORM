@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<people>
+    <person>
+        <name>Vlad</name>
+        <age>21</age>
+        <position>trainee</position>
+        <birthday>20.02.2001</birthday>
+        <salary>0</salary>
+        <location>Ukraine</location>
+    </person>
+    <person>
+        <name>Emi</name>
+        <age>21</age>
+        <position>junior</position>
+        <birthday>29.03.2001</birthday>
+        <salary>30000</salary>
+        <location>Ukraine</location>
+    </person>
+    <person>
+        <name>Andrew</name>
+        <age>22</age>
+        <position>junior</position>
+        <birthday>05.05.2000</birthday>
+        <salary>15000</salary>
+        <location>Ukraine</location>
+    </person>
+    <person>
+        <name>Julia</name>
+        <age>19</age>
+        <position>trainee</position>
+        <birthday>11.10.2002</birthday>
+        <salary>0</salary>
+        <location>Spain</location>
+    </person>
+</people>
