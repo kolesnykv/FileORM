@@ -1,6 +1,4 @@
-{
-  "name": "People table",
-  "person": [
+[
     {
       "name": "Vlad",
       "age": 21,
@@ -33,5 +31,4 @@
       "salary": 0,
       "location": "Spain"
     }
-  ]
-}
+]
