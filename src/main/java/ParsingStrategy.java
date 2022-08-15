@@ -1,6 +1,5 @@
 
-public interface ParsingStrategy {
-
-    Table parseToTable(String content);
+public interface ParsingStrategy<T extends ORMInterface.DataInputSource> {
+    Table parseToTable(T content);
 
 }

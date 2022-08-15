@@ -1,9 +1,7 @@
-import lombok.SneakyThrows;
-import org.apache.commons.io.FileUtils;
 
-import java.io.File;
+import lombok.SneakyThrows;
+
 import java.lang.reflect.Field;
-import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -12,14 +10,34 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
-public class ORM {
+public class ORM implements ORMInterface {
     @SneakyThrows
-    public <T> List<T> transform(File file, Class<T> cls) {
-        String content = FileUtils.readFileToString(file, StandardCharsets.UTF_8);
-        FileType fileType = guessContentTypeByContent(content);
-        ParsingStrategy parsingStrategy = createStrategyByFileType(fileType);
-        Table table = parsingStrategy.parseToTable(content);
+    public <T> List<T> transform(DataInputSource inputSource, Class<T> cls) {
+        Table table = convertToTable(inputSource);
         return convertTableToList(table, cls);
+    }
+
+    private Table convertToTable(DataInputSource inputSource) {
+        if (inputSource instanceof DatabaseInputSource) {
+            return new DatabaseParsingStrategy().parseToTable((DatabaseInputSource) inputSource);
+        } else if (inputSource instanceof StringInputSource) {
+            return getStringParsingStrategy((StringInputSource) inputSource)
+                    .parseToTable((StringInputSource) inputSource);
+        }
+        else {
+            throw new UnsupportedOperationException("Unknown data input source");
+        }
+    }
+
+    private ParsingStrategy<StringInputSource> getStringParsingStrategy(StringInputSource inputSource) {
+        String content = inputSource.content();
+        char firstChar = content.charAt(0);
+        return switch (firstChar) {
+            case '[', '{' -> new JSONParsingStrategy();
+            case '<' -> new XMLParsingStrategy();
+            default -> new CSVParsingStrategy();
+        };
+
     }
 
     private <T> List<T> convertTableToList(Table table, Class<T> cls) {
@@ -58,22 +76,4 @@ public class ORM {
         }).apply(value);
     }
 
-    private ParsingStrategy createStrategyByFileType(FileType fileType) {
-        return switch (fileType) {
-            case JSON -> new JSONParsingStrategy();
-            case XML -> new XMLParsingStrategy();
-            case CSV -> new CSVParsingStrategy();
-            default -> throw new UnsupportedOperationException("Unknown strategy type" + fileType);
-        };
-    }
-
-
-    private FileType guessContentTypeByContent(String content) {
-        char firstChar = content.charAt(0);
-        return switch (firstChar) {
-            case '[', '{' -> FileType.JSON;
-            case '<' -> FileType.XML;
-            default -> FileType.CSV;
-        };
-    }
 }
