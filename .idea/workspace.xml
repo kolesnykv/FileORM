@@ -4,32 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9564adf-4f2d-477e-9cdb-5adee81c5076" name="Changes" comment="new ORM resolved">
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sodeac_dbschema_driver_postgresql.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DatabaseParsingStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ORMInterface.java" afterDir="false" />
+    <list default="true" id="a9564adf-4f2d-477e-9cdb-5adee81c5076" name="Changes" comment="Added database support">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ConnectionReadWriteSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DataReadWriteSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/FileReadWriteSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileORM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FileORM.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CSVParsingStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CSVParsingStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FileType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DatabaseParsingStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DatabaseParsingStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/JSONParsingStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JSONParsingStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ORM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ORM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ORMInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ORMInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ParsingStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ParsingStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/XMLParsingStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/XMLParsingStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/CSVParsingStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CSVParsingStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FileType.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/JSONParsingStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JSONParsingStrategy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ORM$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ORM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ORM.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ParsingStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ParsingStrategy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/XMLParsingStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/XMLParsingStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/csvParse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jsonParse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/xmlParse.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +60,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "E:/PostgreSQL/postgresql-42.2.18.jar",
+    "last_opened_file_path": "E:/Idea-workspace/Check",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -160,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660508038411</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added database support">
+      <created>1660590536323</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1660590536323</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -181,7 +182,8 @@
     <MESSAGE value="json parse implemented" />
     <MESSAGE value="Enum to navigate added" />
     <MESSAGE value="new ORM resolved" />
-    <option name="LAST_COMMIT_MESSAGE" value="new ORM resolved" />
+    <MESSAGE value="Added database support" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added database support" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -201,7 +203,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
-          <line>23</line>
+          <line>16</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>

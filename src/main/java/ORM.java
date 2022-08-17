@@ -1,4 +1,3 @@
-
 import lombok.SneakyThrows;
 
 import java.lang.reflect.Field;
@@ -12,25 +11,24 @@ import java.util.function.Function;
 
 public class ORM implements ORMInterface {
     @SneakyThrows
-    public <T> List<T> transform(DataInputSource inputSource, Class<T> cls) {
+    public <T> List<T> readAll(DataReadWriteSource<?> inputSource, Class<T> cls) {
         Table table = convertToTable(inputSource);
         return convertTableToList(table, cls);
     }
 
-    private Table convertToTable(DataInputSource inputSource) {
-        if (inputSource instanceof DatabaseInputSource) {
-            return new DatabaseParsingStrategy().parseToTable((DatabaseInputSource) inputSource);
-        } else if (inputSource instanceof StringInputSource) {
-            return getStringParsingStrategy((StringInputSource) inputSource)
-                    .parseToTable((StringInputSource) inputSource);
-        }
-        else {
+    private Table convertToTable(DataReadWriteSource inputSource) {
+        if (inputSource instanceof ConnectionReadWriteSource) {
+            return new DatabaseParsingStrategy().parseToTable((ConnectionReadWriteSource) inputSource);
+        } else if (inputSource instanceof FileReadWriteSource) {
+            return getStringParsingStrategy((FileReadWriteSource) inputSource)
+                    .parseToTable((FileReadWriteSource) inputSource);
+        } else {
             throw new UnsupportedOperationException("Unknown data input source");
         }
     }
 
-    private ParsingStrategy<StringInputSource> getStringParsingStrategy(StringInputSource inputSource) {
-        String content = inputSource.content();
+    private ParsingStrategy<FileReadWriteSource> getStringParsingStrategy(FileReadWriteSource inputSource) {
+        String content = inputSource.getContent();
         char firstChar = content.charAt(0);
         return switch (firstChar) {
             case '[', '{' -> new JSONParsingStrategy();

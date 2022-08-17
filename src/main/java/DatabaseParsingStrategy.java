@@ -5,10 +5,10 @@ import java.sql.ResultSetMetaData;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class DatabaseParsingStrategy implements ParsingStrategy<ORMInterface.DatabaseInputSource> {
+public class DatabaseParsingStrategy implements ParsingStrategy<ConnectionReadWriteSource> {
     @Override
-    public Table parseToTable(ORMInterface.DatabaseInputSource content) {
-        ResultSet resultSet = content.resultSet();
+    public Table parseToTable(ConnectionReadWriteSource content) {
+        ResultSet resultSet = content.getContent();
         Map<Integer, Map<String, String>> resultMap = buildTable(resultSet);
         return new Table(resultMap);
     }
