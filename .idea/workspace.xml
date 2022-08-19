@@ -4,26 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9564adf-4f2d-477e-9cdb-5adee81c5076" name="Changes" comment="Added database support">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ConnectionReadWriteSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DataReadWriteSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/FileReadWriteSource.java" afterDir="false" />
+    <list default="true" id="a9564adf-4f2d-477e-9cdb-5adee81c5076" name="Changes" comment="refactored">
+      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_13_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_compiler_api_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_compiler_javac_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_utils_3_0_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CSVWriteStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/JSONWriteStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WriteStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/XMLWriteStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileORM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FileORM.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CSVParsingStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CSVParsingStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DatabaseParsingStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DatabaseParsingStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/JSONParsingStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JSONParsingStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ConnectionReadWriteSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConnectionReadWriteSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ORM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ORM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ORMInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ORMInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ParsingStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ParsingStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/XMLParsingStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/XMLParsingStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sample.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sample.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sample.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/CSVParsingStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CSVParsingStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FileType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JSONParsingStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JSONParsingStrategy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ORM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ORM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ParsingStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ParsingStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/XMLParsingStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/XMLParsingStrategy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sample.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sample.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sample.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +52,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -51,22 +77,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "E:/Idea-workspace/Check",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Idea-workspace/Check&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="Push.Settings">
     <option name="SHOW_DETAILS_PANEL" value="false" />
   </component>
@@ -161,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660590536323</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="refactored">
+      <created>1660739280050</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1660739280050</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -183,7 +216,8 @@
     <MESSAGE value="Enum to navigate added" />
     <MESSAGE value="new ORM resolved" />
     <MESSAGE value="Added database support" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added database support" />
+    <MESSAGE value="refactored" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -196,14 +230,13 @@
           <properties class="org.postgresql.util.PSQLException" package="org.postgresql.util" />
           <option name="timeStamp" value="27" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/JSONParsingStrategy.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.StringIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="33" />
+        </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
-          <line>16</line>
+          <line>19</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>

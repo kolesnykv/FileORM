@@ -10,12 +10,15 @@ import java.sql.Statement;
 @Getter
 public class ConnectionReadWriteSource implements DataReadWriteSource {
     private final Connection source;
-    private final String table;
+    private final Class<?> tableClass;
+
+
 
     @SneakyThrows
     @Override
     public ResultSet getContent() {
+        String tableName = tableClass.getAnnotation(TableData.class).name();
         Statement statement = source.createStatement();
-        return statement.executeQuery("SELECT * FROM " + table);
+        return statement.executeQuery("SELECT * FROM " + tableName);
     }
 }

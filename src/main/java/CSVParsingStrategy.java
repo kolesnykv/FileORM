@@ -9,7 +9,7 @@ public class CSVParsingStrategy implements ParsingStrategy<FileReadWriteSource> 
 
     @Override
     public Table parseToTable(FileReadWriteSource content) {
-        List<String> lines = Arrays.asList(content.getContent().split(System.lineSeparator()));
+        List<String> lines = Arrays.asList(content.getContent().split("\n"));
         Map<Integer, String> mapping = buildMapping(lines.get(0));
         Map<Integer, Map<String, String>> result = buildTable(lines.subList(1, lines.size()), mapping);
         return new Table(result);

@@ -1,35 +1,42 @@
-<?xml version="1.0"?>
-<people>
-    <person>
+<ArrayList>
+    <item>
         <name>Vlad</name>
         <age>21</age>
         <position>trainee</position>
-        <birthday>20.02.2001</birthday>
         <salary>0</salary>
+        <birthday>2001-02-20</birthday>
         <location>Ukraine</location>
-    </person>
-    <person>
+    </item>
+    <item>
         <name>Emi</name>
         <age>21</age>
         <position>junior</position>
-        <birthday>29.03.2001</birthday>
         <salary>30000</salary>
+        <birthday>2001-03-29</birthday>
         <location>Ukraine</location>
-    </person>
-    <person>
+    </item>
+    <item>
         <name>Andrew</name>
         <age>22</age>
         <position>junior</position>
-        <birthday>05.05.2000</birthday>
         <salary>15000</salary>
+        <birthday>2000-05-05</birthday>
         <location>Ukraine</location>
-    </person>
-    <person>
+    </item>
+    <item>
         <name>Julia</name>
         <age>19</age>
         <position>trainee</position>
-        <birthday>11.10.2002</birthday>
         <salary>0</salary>
+        <birthday>2002-10-11</birthday>
         <location>Spain</location>
-    </person>
-</people>
+    </item>
+    <item>
+        <name>Kirill</name>
+        <age>22</age>
+        <position>barista</position>
+        <salary>15000</salary>
+        <birthday>1999-11-13</birthday>
+        <location>Ukraine</location>
+    </item>
+</ArrayList>

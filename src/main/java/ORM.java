@@ -1,4 +1,6 @@
+
 import lombok.SneakyThrows;
+import org.apache.commons.io.FilenameUtils;
 
 import java.lang.reflect.Field;
 import java.time.LocalDate;
@@ -15,25 +17,48 @@ public class ORM implements ORMInterface {
         Table table = convertToTable(inputSource);
         return convertTableToList(table, cls);
     }
+    public <T> void writeAll(List<T> list, DataReadWriteSource<?> inputSource) {
+        if (inputSource instanceof ConnectionReadWriteSource) {
+            //TODO
+        } else if (inputSource instanceof FileReadWriteSource) {
+            getPrintingStrategy((FileReadWriteSource) inputSource)
+                    .printToFile((FileReadWriteSource) inputSource, list);
+        }
+        else {
+            throw new UnsupportedOperationException("Unknown data input source");
+        }
+
+    }
 
     private Table convertToTable(DataReadWriteSource inputSource) {
         if (inputSource instanceof ConnectionReadWriteSource) {
             return new DatabaseParsingStrategy().parseToTable((ConnectionReadWriteSource) inputSource);
         } else if (inputSource instanceof FileReadWriteSource) {
-            return getStringParsingStrategy((FileReadWriteSource) inputSource)
+            return getParsingStrategy((FileReadWriteSource) inputSource)
                     .parseToTable((FileReadWriteSource) inputSource);
-        } else {
+        }
+        else {
             throw new UnsupportedOperationException("Unknown data input source");
         }
     }
 
-    private ParsingStrategy<FileReadWriteSource> getStringParsingStrategy(FileReadWriteSource inputSource) {
+    private ParsingStrategy<FileReadWriteSource> getParsingStrategy(FileReadWriteSource inputSource) {
         String content = inputSource.getContent();
         char firstChar = content.charAt(0);
         return switch (firstChar) {
             case '[', '{' -> new JSONParsingStrategy();
             case '<' -> new XMLParsingStrategy();
             default -> new CSVParsingStrategy();
+        };
+
+    }
+    private WriteStrategy<FileReadWriteSource> getPrintingStrategy(FileReadWriteSource inputSource) {
+        String extension = FilenameUtils.getExtension(inputSource.getSource().getName());
+        return switch (extension) {
+            case "json" -> new JSONWriteStrategy();
+            case "xml" -> new XMLWriteStrategy();
+            case "csv" -> new CSVWriteStrategy(); //TODO
+            default -> throw new UnsupportedOperationException();
         };
 
     }
@@ -66,7 +91,7 @@ public class ORM implements ORMInterface {
         typeToFunction.put(String.class, s -> s);
         typeToFunction.put(int.class, Integer::parseInt);
         typeToFunction.put(Float.class, Float::parseFloat);
-        typeToFunction.put(LocalDate.class, s -> LocalDate.parse(s, DateTimeFormatter.ofPattern("dd.MM.yyyy")));
+        typeToFunction.put(LocalDate.class, s -> LocalDate.parse(s, DateTimeFormatter.ofPattern("yyyy-MM-dd")));
         typeToFunction.put(Character.class, s -> s.charAt(0));
         typeToFunction.put(Long.class, Long::parseLong);
         return typeToFunction.getOrDefault(field.getType(), type -> {
