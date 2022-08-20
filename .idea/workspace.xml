@@ -4,36 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9564adf-4f2d-477e-9cdb-5adee81c5076" name="Changes" comment="refactored">
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_13_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_compiler_api_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_compiler_javac_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_utils_3_0_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CSVWriteStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/JSONWriteStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/WriteStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/XMLWriteStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="a9564adf-4f2d-477e-9cdb-5adee81c5076" name="Changes" comment="Write to Files added +some bugs were fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FileORM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FileORM.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CSVParsingStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CSVParsingStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ConnectionReadWriteSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConnectionReadWriteSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CSVWriteStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CSVWriteStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/JSONWriteStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JSONWriteStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ORM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ORM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WriteStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WriteStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/XMLWriteStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/XMLWriteStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/sample.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sample.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CSVParsingStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CSVParsingStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ORM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ORM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Person.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sample.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660739280050</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Write to Files added +some bugs were fixed">
+      <created>1660943441309</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1660943441309</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -217,7 +206,8 @@
     <MESSAGE value="new ORM resolved" />
     <MESSAGE value="Added database support" />
     <MESSAGE value="refactored" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored" />
+    <MESSAGE value="Write to Files added +some bugs were fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Write to Files added +some bugs were fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

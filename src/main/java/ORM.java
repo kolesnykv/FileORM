@@ -22,7 +22,7 @@ public class ORM implements ORMInterface {
             //TODO
         } else if (inputSource instanceof FileReadWriteSource) {
             getPrintingStrategy((FileReadWriteSource) inputSource)
-                    .printToFile((FileReadWriteSource) inputSource, list);
+                    .writeToFile((FileReadWriteSource) inputSource, list);
         }
         else {
             throw new UnsupportedOperationException("Unknown data input source");

@@ -10,7 +10,7 @@ import java.util.List;
 public class JSONWriteStrategy implements WriteStrategy<FileReadWriteSource> {
     @SneakyThrows
     @Override
-    public void printToFile(FileReadWriteSource source, List<?> list) {
+    public void writeToFile(FileReadWriteSource source, List<?> list) {
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModules(new JavaTimeModule());
         mapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));

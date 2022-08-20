@@ -1,5 +1,5 @@
 import java.util.List;
 
 public interface WriteStrategy<T extends DataReadWriteSource> {
-     void printToFile(T source, List<?> list);
+     void writeToFile(T source, List<?> list);
 }

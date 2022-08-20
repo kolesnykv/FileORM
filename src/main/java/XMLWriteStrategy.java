@@ -10,7 +10,7 @@ import java.util.List;
 public class XMLWriteStrategy implements WriteStrategy<FileReadWriteSource>{
     @Override
     @SneakyThrows
-    public void printToFile(FileReadWriteSource source, List<?> list) {
+    public void writeToFile(FileReadWriteSource source, List<?> list) {
         XmlMapper xmlMapper = new XmlMapper();
         xmlMapper.registerModules(new JavaTimeModule());
         xmlMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
