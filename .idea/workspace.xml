@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9564adf-4f2d-477e-9cdb-5adee81c5076" name="Changes" comment="Write to Files added +some bugs were fixed">
+    <list default="true" id="a9564adf-4f2d-477e-9cdb-5adee81c5076" name="Changes" comment="WriteCSV improved">
+      <change afterPath="$PROJECT_DIR$/src/main/java/DatabaseWriteStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileORM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FileORM.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CSVWriteStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CSVWriteStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/JSONWriteStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JSONWriteStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ConnectionReadWriteSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConnectionReadWriteSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ORM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ORM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WriteStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WriteStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/XMLWriteStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/XMLWriteStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/sample.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ORM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ORM.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sample.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample.csv" afterDir="false" />
     </list>
@@ -59,22 +59,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Idea-workspace/Check&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "E:/Idea-workspace/Check",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="Push.Settings">
     <option name="SHOW_DETAILS_PANEL" value="false" />
   </component>
@@ -183,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660943441309</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="WriteCSV improved">
+      <created>1660990821463</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1660990821463</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -207,7 +213,8 @@
     <MESSAGE value="Added database support" />
     <MESSAGE value="refactored" />
     <MESSAGE value="Write to Files added +some bugs were fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Write to Files added +some bugs were fixed" />
+    <MESSAGE value="WriteCSV improved" />
+    <option name="LAST_COMMIT_MESSAGE" value="WriteCSV improved" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -224,11 +231,6 @@
           <properties class="java.lang.StringIndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="33" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

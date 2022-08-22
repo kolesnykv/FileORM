@@ -12,13 +12,14 @@ public class ConnectionReadWriteSource implements DataReadWriteSource {
     private final Connection source;
     private final Class<?> tableClass;
 
-
+    public String getTableName() {
+         return tableClass.getAnnotation(TableData.class).name();
+    }
 
     @SneakyThrows
     @Override
     public ResultSet getContent() {
-        String tableName = tableClass.getAnnotation(TableData.class).name();
         Statement statement = source.createStatement();
-        return statement.executeQuery("SELECT * FROM " + tableName);
+        return statement.executeQuery("SELECT * FROM " + getTableName());
     }
 }

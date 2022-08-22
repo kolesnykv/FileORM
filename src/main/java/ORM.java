@@ -19,7 +19,7 @@ public class ORM implements ORMInterface {
     }
     public <T> void writeAll(List<T> list, DataReadWriteSource<?> inputSource) {
         if (inputSource instanceof ConnectionReadWriteSource) {
-            //TODO
+            new DatabaseWriteStrategy().writeToFile((ConnectionReadWriteSource) inputSource, list);
         } else if (inputSource instanceof FileReadWriteSource) {
             getPrintingStrategy((FileReadWriteSource) inputSource)
                     .writeToFile((FileReadWriteSource) inputSource, list);

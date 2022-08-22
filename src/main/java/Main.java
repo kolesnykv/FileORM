@@ -17,6 +17,9 @@ public class Main {
         String jdbc = "jdbc:postgresql://localhost:5432/person_database";
         List<Person> personList2 = new ORM()
                 .readAll(new ConnectionReadWriteSource(newConnection(jdbc), Person.class), Person.class);
+        personList2.add(new Person("Kirill", 22, "barista"
+                , 15000, LocalDate.parse("1999-11-13", DateTimeFormatter.ofPattern("yyyy-MM-dd")), "Ukraine"));
+        new ORM().writeAll(personList2, new ConnectionReadWriteSource(newConnection(jdbc), Person.class));
     }
 
     @SneakyThrows

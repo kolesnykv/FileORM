@@ -1,7 +1,7 @@
-name,age,position,salary,birthday,location -- meta info
-Vlad,21,trainee,0,2001-02-20,Ukraine
-Emi,21,junior,30000,2001-03-29,Ukraine
-Andrew,22,junior,15000,2000-05-05,Ukraine
-Julia,20,trainee,0,2002-10-11,Spain
-Kirill,22,barista,15000,1999-11-13,Ukraine
-Kirill,22,barista,15000,1999-11-13,Ukraine
+name, age, position, salary, birthday, location -- meta info
+Vlad, 21, trainee, 0, 2001-02-20, Ukraine
+Emi, 21, junior, 30000, 2001-03-29, Ukraine
+Andrew, 22, junior, 15000, 2000-05-05, Ukraine
+Julia, 20, trainee, 0, 2002-10-11, Spain
+Kirill, 22, barista, 15000, 1999-11-13, Ukraine
+Kirill, 22, barista, 15000, 1999-11-13, Ukraine

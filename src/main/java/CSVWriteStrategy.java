@@ -34,7 +34,7 @@ public class CSVWriteStrategy implements WriteStrategy<FileReadWriteSource> {
             String getterName = "get" + StringUtils.capitalize(f.getName());
             list.add(String.valueOf(MethodUtils.invokeMethod(o, getterName)));
         }
-        print.append(String.join(",", list))
+        print.append(String.join(", ", list))
                 .append("\n");
     }
 
@@ -43,7 +43,7 @@ public class CSVWriteStrategy implements WriteStrategy<FileReadWriteSource> {
         for (Field f : fields) {
             list.add(f.getName());
         }
-        print.append(String.join(",", list))
+        print.append(String.join(", ", list))
                 .append(" -- meta info\n");
     }
 }
